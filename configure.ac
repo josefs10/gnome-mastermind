@@ -39,18 +39,9 @@ GNOME_COMPILE_WARNINGS
 dnl pkg-config
 PKG_PROG_PKG_CONFIG
 
-dnl GLIB
-PKG_CHECK_MODULES([GLIB], [glib-2.0 >= 2.8.0 gobject-2.0 gthread-2.0 gmodule-2.0])
-
 dnl GTK
 PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.8.0])
 
-dnl GTK Deps+Libglade
-PKG_CHECK_MODULES([GTK_DEP],
-	[cairo >= 1.0.0
-         pango >= 1.10.0
-	 gdk-2.0 >= 2.8.0
-	 gdk-pixbuf-2.0 >= 2.8.0])
 PKG_CHECK_MODULES([GCONF], [gconf-2.0 >= 2.0.0])
 
 GM_DEFINES='-DDATA_DIR="\"$(datadir)\"" -DPKGDATA_DIR="\"$(pkgdatadir)\""'
