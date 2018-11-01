@@ -1,2 +1,4 @@
 src/gnome-mastermind.c
 desktop/gnome-mastermind.desktop.in
+ui/menus.ui
+ui/ui.ui

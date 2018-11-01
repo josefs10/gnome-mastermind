@@ -6,7 +6,7 @@ AC_CANONICAL_BUILD
 AC_CANONICAL_HOST
 AC_CANONICAL_TARGET
 
-AM_INIT_AUTOMAKE([1.8])
+AM_INIT_AUTOMAKE([subdir-objects])
 
 AM_CONFIG_HEADER([config.h])
 
@@ -43,7 +43,7 @@ dnl GLIB
 PKG_CHECK_MODULES([GLIB], [glib-2.0 >= 2.8.0 gobject-2.0 gthread-2.0 gmodule-2.0])
 
 dnl GTK
-PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.8.0])
+PKG_CHECK_MODULES([GTK], [gtk+-3.0 >= 3.21.4])
 
 dnl GTK Deps+Libglade
 PKG_CHECK_MODULES([GTK_DEP],
@@ -52,6 +52,8 @@ PKG_CHECK_MODULES([GTK_DEP],
 	 gdk-2.0 >= 2.8.0
 	 gdk-pixbuf-2.0 >= 2.8.0])
 PKG_CHECK_MODULES([GCONF], [gconf-2.0 >= 2.0.0])
+
+AM_PATH_GLIB_2_0
 
 GM_DEFINES='-DDATA_DIR="\"$(datadir)\"" -DPKGDATA_DIR="\"$(pkgdatadir)\""'
 AC_SUBST([GM_DEFINES])
